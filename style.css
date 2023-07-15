@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    margin: 2rem;
+    grid-template-columns: auto auto;
+    row-gap: 3rem;
+}
+
+.container section {
+    margin-left: 10rem;
+}
+
+.progress-1 {
+    width:20rem;
+    height:2rem;
+    border-radius: 20px;
+    background:
+     repeating-linear-gradient(135deg,#f03355 0 10px,#ffa516 0 20px) 0/0%   no-repeat,
+     repeating-linear-gradient(135deg,#ddd    0 10px,#eee    0 20px) 0/100%;
+    animation:p1 3s ease infinite;
+  }
+  @keyframes p1 {
+      100% {background-size:100%}
+  }
+
+  .progress-2 {
+    width:20rem;
+    height:2rem;
+    border-radius: 20px;
+    color:#514b82;
+    border:2px solid;
+    position: relative;
+  }
+  .progress-2::before {
+    content:"";
+    position: absolute;
+    margin:2px;
+    inset:0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation:p2 3s infinite;
+  }
+  @keyframes p2 {
+      100% {inset:0}
+  }
+
+  .progress-3 {
+    width:20rem;
+    height:2rem;
+    mask: linear-gradient(90deg,#000 70%,#0000 0) 0/10%;
+    -webkit-mask:linear-gradient(90deg,#000 70%,#0000 0) 0/10%;
+    background:
+     linear-gradient(#000 0 0) 0/0% no-repeat
+     #ddd;
+    animation:p3 3s infinite steps(12);
+  }
+  @keyframes p3 {
+      100% {background-size:120%}
+  }
+
+  .progress-4 {
+    width:20rem;
+    height:2rem;
+    mask: 
+      radial-gradient(circle closest-side,#000 94%,#0000) 0 0/12.5% 100%,
+      linear-gradient(#000 0 0) center/calc(100% - 15px) calc(100% - 15px) no-repeat;;
+    -webkit-mask:
+      radial-gradient(circle closest-side,#000 94%,#0000) 0 0/12.5% 100%,
+      linear-gradient(#000 0 0) center/calc(100% - 15px) calc(100% - 15px) no-repeat;
+    background:
+     linear-gradient(#25b09b 0 0) 0/0% no-repeat #ddd;
+    animation:p4 2s infinite linear;
+  }
+  @keyframes p4 {
+      100% {background-size:100%}
+  }
+
+  .progress-5 {
+    width:10rem;
+    height:10rem;
+    border-radius: 50%; 
+    background:
+      radial-gradient(138% 70% at top, #0000 79.5%,#269af2 80%),
+      radial-gradient(138% 70% at bottom,#269af2 79.5%,#0000 80%),
+      radial-gradient(138% 70% at top   ,#0000 79.5%,#269af2 80%),
+      #ccc;
+    background-size: 50.5% 200%;
+    background-position: -100% 0%,0% 0%,100% 0%;
+    background-repeat:no-repeat;
+    animation:p5 2s infinite linear;
+  }
+  @keyframes p5 {
+      33%  {background-position:    0% 33% ,100% 33% ,200% 33% }
+      66%  {background-position: -100%  66%,0%   66% ,100% 66% }
+      100% {background-position:    0% 100%,100% 100%,200% 100%}
+  }
